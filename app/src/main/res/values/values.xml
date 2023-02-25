@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="viewer_mode_grid">0x10</integer>
+    <integer name="viewer_mode_list">0x20</integer>
+
+    <string name="key_viewer_mode">"SHARED_LIST_VIEWER_MODE"</string>
+    <string name="key_theme_mode">SHARED_THEME_MODE</string>
+
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_drawer"
+    app:startDestination="@+id/nav_app_home">
+
+    <fragment
+        android:id="@+id/nav_app_home"
+        android:name="com.emulotus.fragments.HomeFragment"
+        android:label="@string/home_app"
+        tools:layout="@layout/fragment_home"
+        />
+
+    <fragment
+        android:id="@+id/nav_app_settings"
+        android:name="com.emulotus.fragments.SettingsFragment"
+        android:label="@string/settings_app"
+        tools:layout="@layout/fragment_settings"
+    />
+
+    <fragment
+        android:id="@+id/nav_user_gallery"
+        android:name="com.emulotus.fragments.GalleryFragment"
+        android:label="@string/gallery_user"
+        tools:layout="@layout/fragment_gallery"
+        />
+
+    <fragment
+        android:id="@+id/nav_user_statistics"
+        android:name="com.emulotus.fragments.StatisticsFragment"
+        android:label="@string/statistics_user"
+        tools:layout="@layout/fragment_statistics"
+        />
+
+    <fragment
+        android:id="@+id/nav_user_log"
+        android:name="com.emulotus.fragments.UserLogFragment"
+        android:label="@string/log_user"
+        tools:layout="@layout/fragment_userlog"
+        />
+
+</navigation>

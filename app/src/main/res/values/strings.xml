@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Lotus</string>
+    <string name="list_viewer_desc">Change list viewer</string>
+    <string name="subtitle_init_value">Overwrite</string>
+    <string name="theme_switcher_desc">Theme switcher shortcut</string>
+    <string name="galley_desc">Display all screenshots</string>
+
+    <string name="fab_desc">Select new game directory</string>
+    <string name="device_desc">Display device state</string>
+
+    <string name="app_desc">An experimental PSXX emulator for ARMv8a machines</string>
+    <string name="open_desc">Open the Navigation Bar</string>
+    <string name="close_desc">Close the Navigation Bar</string>
+
+    <string name="drawer_app_title">Application</string>
+    <string name="exit_app">Exit Application</string>
+    <string name="exit_app_desc">Exit from the application</string>
+    <string name="settings_app">Settings</string>
+    <string name="settings_app_desc">Open the program configuration</string>
+
+    <string name="drawer_user_title">User</string>
+    <string name="home_app">Home</string>
+    <string name="home_app_desc">Go to home</string>
+    <string name="gallery_user">Screenshots Gallery</string>
+    <string name="gallery_user_desc">Open the screenshots gallery</string>
+
+    <string name="statistics_user">Statistics for Nerds</string>
+    <string name="statistics_user_desc">Display all statistics, for nerd peoples only</string>
+    <string name="log_user_desc">Open the log messages</string>
+    <string name="log_user">Log Messages</string>
+    <string name="home_text">HOME</string>
+    <string name="settings_text">SETTINGS</string>
+    <string name="user_log_all">All</string>
+    <string name="user_log_success">Success</string>
+    <string name="user_log_dev">Developer</string>
+    <string name="user_log_warn">Warning</string>
+    <string name="user_log_error">Error</string>
+    <string name="user_log_def_time">Unknown</string>
+    <string name="user_log_def_location">Unspecified</string>
+    <string name="user_log_def_message">Some message</string>
+    <string name="user_log_def_level">U</string>
+    <string name="user_log_def_tag">No context</string>
+    <string name="user_log_info">Info</string>
+
+</resources>

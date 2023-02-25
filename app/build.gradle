@@ -1,0 +1,105 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'arm64-v8a'
+            universalApk false
+        }
+    }
+
+    defaultConfig {
+        applicationId 'com.lotusemu'
+        minSdk 30
+        targetSdk 33
+        versionCode 11
+        versionName '0.1.1'
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("$System.env.ANDROID_KEY_FILEPATH")
+            storePassword "$System.env.ANDROID_KEY_PASS"
+            keyAlias "$System.env.ANDROID_KEY_ALIAS"
+            keyPassword "$System.env.ANDROID_KEY_STORE_PASS"
+        }
+
+        debug {
+            storeFile file("$System.env.ANDROID_KEY_FILEPATH")
+            storePassword "$System.env.ANDROID_KEY_PASS"
+            keyAlias "$System.env.ANDROID_KEY_ALIAS"
+            keyPassword "$System.env.ANDROID_KEY_STORE_PASS"
+        }
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            // Remove unnecessary code parts like comments, white spaces and tabulations with the
+            // intention to reduce the output binary size!
+            minifyEnabled true
+            shrinkResources true
+            externalNativeBuild {
+                cmake {
+                    arguments '-DCMAKE_BUILD_TYPE=Release'
+                }
+            }
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            externalNativeBuild {
+                cmake {
+                    arguments '-DCMAKE_BUILD_TYPE=Debug'
+                }
+            }
+            signingConfig signingConfigs.debug
+        }
+    }
+
+
+    namespace 'com.emulotus'
+    compileSdk 33
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+            version '3.18.1'
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+}

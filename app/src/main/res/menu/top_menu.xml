@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/top_viewer"
+        android:icon="@drawable/ic_grid"
+        android:title=""
+        android:contentDescription="@string/list_viewer_desc"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/top_theme"
+        android:icon="@drawable/ic_dark"
+        android:title=""
+        android:contentDescription="@string/theme_switcher_desc"
+        app:showAsAction="ifRoom" />
+
+</menu>

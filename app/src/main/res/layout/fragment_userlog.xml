@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.emulotus.fragments.UserLogFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/log_user" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:scrollbars="none">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="6dp">
+
+                <RadioButton
+                    android:id="@+id/user_log_all"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="4dp"
+                    android:background="@drawable/ic_radio_selector_all"
+                    android:button="@drawable/ic_radio_invalid"
+                    android:checked="true"
+                    android:paddingHorizontal="6dp"
+                    android:text="@string/user_log_all"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white" />
+
+                <RadioButton
+                    android:id="@+id/user_log_success"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="4dp"
+                    android:background="@drawable/ic_radio_selector_success"
+                    android:button="@drawable/ic_radio_invalid"
+                    android:paddingHorizontal="6dp"
+                    android:text="@string/user_log_success"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white" />
+
+                <RadioButton
+                    android:id="@+id/user_log_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="4dp"
+                    android:background="@drawable/ic_radio_selector_info"
+                    android:button="@drawable/ic_radio_invalid"
+                    android:paddingHorizontal="6dp"
+                    android:text="@string/user_log_info"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white" />
+
+                <RadioButton
+                    android:id="@+id/user_log_warn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="4dp"
+                    android:background="@drawable/ic_radio_selector_warn"
+                    android:button="@drawable/ic_radio_invalid"
+                    android:paddingHorizontal="6dp"
+                    android:text="@string/user_log_warn"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white" />
+
+                <RadioButton
+                    android:id="@+id/user_log_dev"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="4dp"
+                    android:background="@drawable/ic_radio_selector_dev"
+                    android:button="@drawable/ic_radio_invalid"
+                    android:paddingHorizontal="6dp"
+                    android:text="@string/user_log_dev"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white" />
+
+                <RadioButton
+                    android:id="@+id/user_log_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="4dp"
+                    android:background="@drawable/ic_radio_selector_err"
+                    android:button="@drawable/ic_radio_invalid"
+                    android:paddingHorizontal="6dp"
+                    android:text="@string/user_log_error"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white" />
+
+            </RadioGroup>
+
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/log_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollEffect="compress"
+            android:nestedScrollingEnabled="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

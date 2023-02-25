@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single" />
+
+    <item android:title="@string/drawer_app_title">
+        <menu>
+            <group>
+                <item
+                    android:id="@+id/drawer_home"
+                    android:contentDescription="@string/home_app_desc"
+                    android:icon="@drawable/ic_home"
+                    android:title="@string/home_app" />
+
+                <item
+                    android:id="@+id/drawer_settings"
+                    android:contentDescription="@string/settings_app_desc"
+                    android:icon="@drawable/ic_settings"
+                    android:title="@string/settings_app" />
+
+                <item
+                    android:id="@+id/drawer_exit"
+                    android:contentDescription="@string/exit_app_desc"
+                    android:icon="@drawable/ic_close"
+                    android:title="@string/exit_app"
+                    android:checkable="false"/>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/drawer_user_title">
+        <menu>
+            <group>
+                <item
+                    android:id="@+id/drawer_gallery"
+                    android:contentDescription="@string/gallery_user_desc"
+                    android:icon="@drawable/ic_gallery"
+                    android:title="@string/gallery_user" />
+
+                <item
+                    android:id="@+id/drawer_statistics"
+                    android:contentDescription="@string/statistics_user_desc"
+                    android:icon="@drawable/ic_statistics"
+                    android:title="@string/statistics_user" />
+
+                <item
+                    android:id="@+id/drawer_log"
+                    android:contentDescription="@string/log_user_desc"
+                    android:icon="@drawable/ic_log"
+                    android:title="@string/log_user" />
+            </group>
+        </menu>
+    </item>
+
+</menu>
