@@ -67,10 +67,8 @@ android {
         }
     }
 
-
     namespace 'com.emulotus'
     compileSdk 33
-
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -79,12 +77,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    externalNativeBuild {
-        cmake {
-            path file('src/main/cpp/CMakeLists.txt')
-            version '3.18.1'
-        }
-    }
+
     buildFeatures {
         viewBinding true
     }
