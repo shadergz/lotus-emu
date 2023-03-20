@@ -17,11 +17,7 @@ find_library(log-lib log)
 target_link_libraries(emucore ${log-lib})
 target_include_directories(emucore PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
-# Take a moment and read this before dealing with ARM ABI compiler extensions
-# This article will give u a better knowledge about how the compiler generate and maintainer
-# compatibility between a bare metal ARM machines
 
-# URL: https://embeddedartistry.com/blog/2017/10/11/demystifying-arm-floating-point-compiler-options/
 target_compile_options(emucore PRIVATE -mfloat-abi=hard -mfpu=neon
         -funwind-tables -fstack-protector-strong)
 

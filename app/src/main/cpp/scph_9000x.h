@@ -1,6 +1,6 @@
 #pragma once
 
-#include <mips/MIPS.h>
+#include <mips/mips.h>
 
 namespace lotus::console {
 

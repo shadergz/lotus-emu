@@ -23,14 +23,14 @@ namespace lotus::emulation {
         boolean exec_signal();
 
         VMState get_state() const {
-            /* Doesn't locks multiples thread execution, only blocks when an execution stage
-             * is begin performed! */
-            std::shared_lock<SharedSpinLock> lock {m_vm_main_lock};
+            // Doesn't locks multiples thread execution, only blocks when an execution stage
+            // is begin performed!
+            std::shared_lock<SharedSpinLock> lock {m_vmLock};
             return m_int_status;
         }
 
     private:
-        mutable SharedSpinLock m_vm_main_lock;
+        mutable SharedSpinLock m_vmLock;
         VMState m_int_status {VMState::VM_THREAD_WAITING};
 
         std::unique_ptr<console::SCPH9000Generic> m_console9000;

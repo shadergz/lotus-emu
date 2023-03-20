@@ -11,14 +11,14 @@ namespace lotus::mips {
 
     public:
         MIPSXCore() {
-            m_mips_r300a = std::make_unique<CoreR3000A>();
+            m_mipsR300A = std::make_unique<CoreR3000A>();
         }
 
     private:
-        std::unique_ptr<CoreR3000A> m_mips_r300a;
+        std::unique_ptr<CoreR3000A> m_mipsR300A;
 
-        std::unique_ptr<JitRecompiler> m_mips_recompiler;
-        std::unique_ptr<MachineInterpreter> m_mips_interpreter;
+        std::unique_ptr<JitCompiler> m_mipsCompiler;
+        std::unique_ptr<MachineInterpreter> m_mipsInterpreter;
 
     };
 

@@ -2,7 +2,7 @@
 
 namespace lotus::mips {
 
-    class JitRecompiler {
+    class JitCompiler {
     public:
     };
 }

@@ -75,8 +75,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun swapDspViewer(itemView: MenuItem?) {
-        /* Initializing the display viewer icon whether doesn't exist in our program preferences
-        /  - Swapping between tho display modes [Grid, List] - */
+        // Initializing the display viewer icon whether doesn't exist in our program preferences
+        // Swapping between tho display modes [Grid, List]
         val actualDspViewer = userPreferences.let {
             it?.getInt(sharedViewerMode, defViewerIcon)
         }

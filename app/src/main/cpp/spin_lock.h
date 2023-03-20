@@ -7,7 +7,7 @@
 #include <common/core_space.h>
 
 namespace lotus {
-    /* Quick and dirt implementation of a simple spin lock "mutex" like system,
+    /* Quick and dirt implementation of a simple spin locker (mutex) like system,
      * Could be used within std::shared_lock and std::unique_ptr
     */
     class [[maybe_unused]] spin_lock {
@@ -29,7 +29,7 @@ namespace lotus {
             return !m_spin.test_and_set(std::memory_order_acq_rel);
         }
         inline void cleanupState() {
-            m_spin.clear(std::memory_order_acq_rel);
+            m_spin.clear(std::memory_order_release);
         }
 
         [[maybe_unused]] void unlock() {
@@ -39,7 +39,7 @@ namespace lotus {
         }
 
         boolean try_unlock() {
-            // Immediate returning (is already in unlocked staged)
+            // Immediate returning (is already in unlocked stage)
             if (!m_spin.test()) [[unlikely]] {
                 return false;
             }
@@ -54,8 +54,8 @@ namespace lotus {
     };
 
     class SharedSpinLock {
-        static constexpr u64 shared_read_state {2};
-        static constexpr u64 shared_write_state {1};
+        static constexpr u64 sharedReadState {2};
+        static constexpr u64 sharedWriteState {1};
     public:
         [[maybe_unused]] void lock() {
             if (try_lock()) [[likely]] {
@@ -73,18 +73,18 @@ namespace lotus {
         }
 
         boolean try_lock() {
-            u64 should {shared_read_state };
+            u64 should {sharedReadState };
             // Only locks if the lockable memory region has a (ZERO) 0 value of 64 bits
-            return m_state.compare_exchange_strong(should, shared_write_state,
+            return m_state.compare_exchange_strong(should, sharedWriteState,
                                                    std::memory_order_acq_rel);
         }
         bool try_unlock() {
             // This will be called when a std::unique_lock begin destroyed!
             // Because of std::unique_lock will only acquire the lock when there isn't a
-            // Read/Write lock! This means that shared_write_state will be stored inside the
+            // Read/Write lock! This means that sharedWriteState will be stored inside the
             // Atomic value region!
-            if (m_state.load(std::memory_order_consume) & shared_write_state) {
-                m_state.fetch_and(~shared_write_state, std::memory_order_release);
+            if (m_state.load(std::memory_order_consume) & sharedWriteState) {
+                m_state.fetch_and(~sharedWriteState, std::memory_order_release);
                 return true;
             }
 
@@ -105,17 +105,17 @@ namespace lotus {
         [[maybe_unused]] bool try_lock_shared() {
             // This method is called everytime that a non-write operation is needed!
             u64 persistentValue { m_state.load(std::memory_order_consume) };
-            if (persistentValue & shared_write_state) [[unlikely]] {
+            if (persistentValue & sharedWriteState) [[unlikely]] {
                 // Shared locks mustn't allow already locked flags with write operation begin
                 // locked again!
                 return false;
             }
-            return !(m_state.fetch_add(shared_read_state, std::memory_order_acquire)
-                     & shared_write_state);
+            return !(m_state.fetch_add(sharedReadState, std::memory_order_acquire)
+                     & sharedWriteState);
         }
 
         [[maybe_unused]] void unlock_shared() {
-            m_state.fetch_add(-shared_read_state, std::memory_order_release);
+            m_state.fetch_add(-sharedReadState, std::memory_order_release);
         }
     private:
         void dirty_spin_lock();

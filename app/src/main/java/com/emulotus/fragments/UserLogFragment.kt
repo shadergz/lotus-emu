@@ -19,17 +19,16 @@ class UserLogFragment : Fragment() {
     private lateinit var logAdapter: DynamicLogger
 
     private var logTestMessage = mutableListOf(
-        LoggerMessage(
-            LogMessageLevel.SuccessMessage, "Test success",
-            "Hey what's up, everything is ok!"
-        ),
-        LoggerMessage(LogMessageLevel.InfoMessage, "Test info (Wout context)"),
-        LoggerMessage(
-            LogMessageLevel.WarnMessage, "Test warn", "The virtual machine was" +
-                    " halt"
-        ),
-        LoggerMessage(LogMessageLevel.DevMessage, "Test dev", "Maybe a bug?! Report now!"),
-        LoggerMessage(LogMessageLevel.ErrorMessage, "Test info", "Backend was clashed!")
+        LoggerMessage(LogMessageLevel.SuccessMessage, "Test success",
+            "Hey what's up, everything is ok!"),
+        LoggerMessage(LogMessageLevel.InfoMessage,
+            "Test info (Wout context)"),
+        LoggerMessage(LogMessageLevel.WarnMessage, "Test warn",
+            "The virtual machine was halt"),
+        LoggerMessage(LogMessageLevel.DevMessage, "Test dev",
+            "Maybe a bug?! Report now!"),
+        LoggerMessage(LogMessageLevel.ErrorMessage, "Test info",
+            "Backend was clashed!")
     )
 
     override fun onStart() {
