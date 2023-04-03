@@ -6,7 +6,7 @@
     <string name="galley_desc">Display all screenshots</string>
 
     <string name="fab_desc">Select new game directory</string>
-    <string name="device_desc">Display device state</string>
+    <string name="device_desc">Display device information</string>
 
     <string name="app_desc">An experimental PSXX emulator for ARMv8a machines</string>
     <string name="open_desc">Open the Navigation Bar</string>

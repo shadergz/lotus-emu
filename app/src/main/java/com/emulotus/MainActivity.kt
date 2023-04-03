@@ -3,23 +3,21 @@ package com.emulotus
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.WindowInsets
 import android.view.WindowInsetsController
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
-
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.emulotus.databinding.ActivityMainBinding
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomappbar.BottomAppBar
-
 import com.google.android.material.color.DynamicColors
 import com.google.android.material.navigation.NavigationView
 import java.lang.System.loadLibrary
@@ -48,7 +46,6 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setupCurrentTheme()
     }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.emulotus.fragments.UserLogFragment">
+    tools:context=".fragments.UserLogFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -50,7 +50,8 @@
                     android:paddingHorizontal="6dp"
                     android:text="@string/user_log_success"
                     android:textAlignment="center"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    tools:ignore="TextContrastCheck" />
 
                 <RadioButton
                     android:id="@+id/user_log_info"
@@ -62,7 +63,8 @@
                     android:paddingHorizontal="6dp"
                     android:text="@string/user_log_info"
                     android:textAlignment="center"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    tools:ignore="TextContrastCheck" />
 
                 <RadioButton
                     android:id="@+id/user_log_warn"
@@ -74,7 +76,7 @@
                     android:paddingHorizontal="6dp"
                     android:text="@string/user_log_warn"
                     android:textAlignment="center"
-                    android:textColor="@android:color/white" />
+                    android:textColor="#4A148C" />
 
                 <RadioButton
                     android:id="@+id/user_log_dev"
@@ -86,7 +88,8 @@
                     android:paddingHorizontal="6dp"
                     android:text="@string/user_log_dev"
                     android:textAlignment="center"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    tools:ignore="TextContrastCheck" />
 
                 <RadioButton
                     android:id="@+id/user_log_error"
@@ -98,7 +101,8 @@
                     android:paddingHorizontal="6dp"
                     android:text="@string/user_log_error"
                     android:textAlignment="center"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    tools:ignore="TextContrastCheck" />
 
             </RadioGroup>
 
